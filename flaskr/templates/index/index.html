@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}EpsAvlc Homepage{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+今日是{{time_dict['year']}}年{{time_dict['month']}}月{{time_dict['mday']}}日。
+{% endblock %}
