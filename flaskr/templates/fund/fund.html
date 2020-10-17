@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}今日基金估值{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<table>
+{%- for row in rows %}
+  <tr>
+  {%- for col in cols %}
+    <td> a </td>
+  {%- endfor %}
+  </tr>
+{%- endfor %}
+</table>
+{% endblock %}

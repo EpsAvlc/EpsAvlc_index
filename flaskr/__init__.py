@@ -25,4 +25,7 @@ def create_app(test_config=None):
     from . import index
     app.register_blueprint(index.bp)
 
+    from . import fund
+    app.register_blueprint(fund.bp)
+
     return app
