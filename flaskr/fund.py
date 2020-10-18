@@ -4,8 +4,10 @@ from flask import (
 
 bp = Blueprint('fund', __name__)
 
-valuation_site = 'https://danjuanapp.com/djmodule/value-center'
 
+from .crawler.fund_crawler import get_fund_dict
 @bp.route('/fund')
 def create():
-    return render_template('fund/fund.html', cols = {1, 2}, rows = {1, 2})
+    fund_list = get_fund_dict()
+    keys = ['name', 'pb', 'pe', 'roe']
+    return render_template('fund/fund.html', fund_list = fund_list, keys = keys)

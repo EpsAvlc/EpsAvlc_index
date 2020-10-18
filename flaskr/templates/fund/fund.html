@@ -6,10 +6,10 @@
 
 {% block content %}
 <table>
-{%- for row in rows %}
+{%- for fund in fund_list %}
   <tr>
-  {%- for col in cols %}
-    <td> a </td>
+  {%- for key in keys %}
+    <td> {{fund[key]}} </td>
   {%- endfor %}
   </tr>
 {%- endfor %}
