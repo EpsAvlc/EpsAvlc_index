@@ -22,6 +22,7 @@ def get_fund_dict():
         fund_dict["pb"] = item['pb']
         fund_dict["pe"] = item['pe']
         fund_dict["roe"] = item['roe']
+        fund_dict["eva_type_int"] = item["eva_type_int"]
 
         fund_list.append(fund_dict)
     return fund_list

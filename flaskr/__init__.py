@@ -1,8 +1,12 @@
 import os 
 from flask import Flask
 
+from datetime import timedelta 
+
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
+    # app.send_file_max_age_default = timedelta(seconds=1)
+    app.config['SEND_FILE_MAX_AGE_DEFAULT'] = timedelta(seconds=1)
     app.config.from_mapping(
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite')
