@@ -1,5 +1,5 @@
 import os 
-from flask import Flask
+from flask import Flask, url_for, redirect
 from flask_bootstrap import Bootstrap
 
 from datetime import timedelta 
@@ -24,14 +24,16 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    @app.route('/hello')
-    def hello():
-        return 'Hello, flask!'
-
     from . import index
     app.register_blueprint(index.bp)
 
     from . import fund
     app.register_blueprint(fund.bp)
+
+    @app.route('/')
+    def index_page():
+        index_url = url_for('index.create')
+        return redirect(index_url)
+
 
     return app
