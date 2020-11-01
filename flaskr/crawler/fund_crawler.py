@@ -17,12 +17,13 @@ def get_fund_dict():
     fund_list = []
 
     for item in web_data['data']['items']:
+        eva_type = {0:'低估', 1:'适中', 2:'高估', 99:''}
         fund_dict={}
         fund_dict["name"] = item['name']
         fund_dict["pb"] = item['pb']
         fund_dict["pe"] = item['pe']
         fund_dict["roe"] = item['roe']
-        fund_dict["eva_type_int"] = item["eva_type_int"]
+        fund_dict["eva_type_int"] = eva_type[item["eva_type_int"]]
 
         fund_list.append(fund_dict)
     return fund_list

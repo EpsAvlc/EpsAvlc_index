@@ -2,6 +2,7 @@ from flask import (
     Blueprint, flash, g, redirect, render_template, request, url_for
 )
 
+
 bp = Blueprint('index', __name__)
 
 @bp.route('/index', methods=('GET', 'POST'))

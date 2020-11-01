@@ -1,10 +1,12 @@
 import os 
 from flask import Flask
+from flask_bootstrap import Bootstrap
 
 from datetime import timedelta 
 
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
+    Bootstrap(app)
     # app.send_file_max_age_default = timedelta(seconds=1)
     app.config['SEND_FILE_MAX_AGE_DEFAULT'] = timedelta(seconds=1)
     app.config.from_mapping(

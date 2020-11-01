@@ -1,18 +1,43 @@
-<!doctype html>
-<title>{% block title %}{% endblock %} - Flaskr</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-<nav>
-  <h1>EpsAvlc</h1>
-  <ul>
+{% from 'bootstrap/nav.html' import render_nav_item %}
+<!DOCTYPE html>
+<html lang="cn">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>{% block title %} Flask Bootstrap {% endblock %}</title> <!-- 定义标题块 -->
+        <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        {{ bootstrap.load_css() }}  <!-- 动态加载 Bootstrap 样式 -->
+    </head>
+    <body>
+    <main class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">EpsAvlc的主页</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <!-- 利用宏 render_nav_item 创建菜单 -->
+                    {{ render_nav_item('index.create', '首页', use_li=True) }}
+                    {{ render_nav_item('fund.create', '基金', use_li=True) }}
+                </ul>
+            </div>
+        </nav>
+        {% block content %}  <!-- 定义内容块 -->
+        <h1> Hello Flask Bootstrap! </h1>
+        {% endblock %}
+        <footer class="text-center">
+            {% block footer %} <!-- 定义页脚块 -->
+                <small> &copy; 2019 <a href="https://epsavlc.github.io/" title="EpsAvlc Blog">EpsAvlc的博客</a>
+                </small>
+            {% endblock %}
+        </footer>
+    </main>
 
-  </ul>
-</nav>
-<section class="content">
-  <header>
-    {% block header %}{% endblock %}
-  </header>
-  {% for message in get_flashed_messages() %}
-    <div class="flash">{{ message }}</div>
-  {% endfor %}
-  {% block content %}{% endblock %}
-</section>
+    <!-- 动态加载 Bootstrap js 脚本 -->
+    {{ bootstrap.load_js() }}
+    </body>
+</html>
