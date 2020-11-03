@@ -6,7 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>{% block title %} Flask Bootstrap {% endblock %}</title> <!-- 定义标题块 -->
         <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
-        {{ bootstrap.load_css() }}  <!-- 动态加载 Bootstrap 样式 -->
+        {{ bootstrap.load_css() }}
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body>
     <main class="container">
@@ -31,13 +32,13 @@
         {% endblock %}
         <footer class="text-center">
             {% block footer %} <!-- 定义页脚块 -->
-                <small> &copy; 2019 <a href="https://epsavlc.github.io/" title="EpsAvlc Blog">EpsAvlc的博客</a>
+                <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="80%" color=#987cb9 SIZE=3>
+                <small> &copy; 2020 <a href="https://epsavlc.github.io/" title="EpsAvlc Blog">EpsAvlc的博客</a>
                 </small>
             {% endblock %}
         </footer>
     </main>
 
-    <!-- 动态加载 Bootstrap js 脚本 -->
     {{ bootstrap.load_js() }}
     </body>
 </html>

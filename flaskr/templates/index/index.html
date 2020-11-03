@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}EpsAvlc Homepage{% endblock %}</h1>
+  <h1>{% block title %}EpsAvlc 的主页{% endblock %}</h1>
 {% endblock %}
 
 {% block navbar %}
@@ -9,5 +9,13 @@
 {% endblock %}
 
 {% block content %}
-今日是{{time_dict['year']}}年{{time_dict['month']}}月{{time_dict['mday']}}日。
+  <h1>曹明</h1>
+  <p>Hello，我是曹明（EpsAvlc），一个机器人方向的研究生。</p>
+  <p>我的痕迹：
+    <ul>
+      <li>博客</li>
+      <li>github</li>
+      <li>bilibili</li>
+    </ul>
+  </p>
 {% endblock %}
