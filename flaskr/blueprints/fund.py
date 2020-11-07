@@ -5,7 +5,7 @@ from flask import (
 bp = Blueprint('fund', __name__)
 
 
-from .crawler.fund_crawler import get_fund_dict
+from ..crawler.fund_crawler import get_fund_dict
 @bp.route('/fund')
 def create():
     fund_list = get_fund_dict()

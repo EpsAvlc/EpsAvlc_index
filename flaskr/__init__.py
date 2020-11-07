@@ -24,11 +24,14 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    from . import index
+    from .blueprints import index
     app.register_blueprint(index.bp)
 
-    from . import fund
+    from .blueprints import fund
     app.register_blueprint(fund.bp)
+
+    from .blueprints import onmyoji
+    app.register_blueprint(onmyoji.bp)
 
     @app.route('/')
     def index_page():
