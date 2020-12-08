@@ -1,14 +1,19 @@
 import os 
 from flask import Flask, url_for, redirect
 from flask_bootstrap import Bootstrap
+from flask_sqlalchemy import SQLAlchemy
 
 from datetime import timedelta 
 
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
+    # Bootstrap
     Bootstrap(app)
-    # app.send_file_max_age_default = timedelta(seconds=1)
+    # sql database
+    db = SQLAlchemy(app)
+    # app configs
     app.config['SEND_FILE_MAX_AGE_DEFAULT'] = timedelta(seconds=1)
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'sqlite:////' + os.path.join(app.root_path, 'data.db'))
     app.config.from_mapping(
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite')
@@ -29,6 +34,9 @@ def create_app(test_config=None):
 
     from .blueprints import fund
     app.register_blueprint(fund.bp)
+
+    from .blueprints import fund_grid
+    app.register_blueprint(fund_grid.bp)
 
     from .blueprints import onmyoji
     app.register_blueprint(onmyoji.bp)

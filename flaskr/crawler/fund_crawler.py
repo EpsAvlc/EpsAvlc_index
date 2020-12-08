@@ -28,5 +28,8 @@ def get_fund_dict():
         fund_list.append(fund_dict)
     return fund_list
 
+def get_specify_fund():
+    pass
+
 if __name__ == "__main__":
-    dict = get_fund_dict()
+    pass
