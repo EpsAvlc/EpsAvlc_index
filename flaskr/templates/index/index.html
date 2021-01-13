@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block content %}
-  <h1>曹明</h1>
+  <!-- <h1>曹明</h1>
   <p>Hello，我是曹明（EpsAvlc），一个机器人方向的研究生。</p>
   <p>我的痕迹：
     <ul>
@@ -20,5 +20,27 @@
   </p>
   <p>上午：实现功能 + flask</p>
   <p>下午：实现功能 + Robotics</p>
-  <p>晚上：论文阅读 + IELTS</p>
+  <p>晚上：论文阅读 + IELTS</p> -->
+
+  <h2>
+    天气预报
+  </h2>
+  <p>当前城市：{{data["city"]}}</p>
+  <table>
+    <tr>
+      <td>日期</td>
+      <td>天气</td>
+      <td>最低温度</td>
+      <td>最高温度</td>
+    </tr>
+   {%- for weather_item in data["weather"] %}
+    <tr>
+      <td>{{weather_item["date"]}}</td>
+      <td>{{weather_item["type"]}}</td>
+      <td>{{weather_item["low_temp"]}}</td>
+      <td>{{weather_item["high_temp"]}}</td>
+    </tr>
+    {%- endfor %}
+  </table>
+  <p>{{weather}}</p>
 {% endblock %}

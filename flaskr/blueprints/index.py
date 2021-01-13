@@ -2,12 +2,13 @@ from flask import (
     Blueprint, flash, g, redirect, render_template, request, url_for
 )
 
-
 bp = Blueprint('index', __name__)
+
+from ..crawler.crawler_utils import getWeather
 
 @bp.route('/index', methods=('GET', 'POST'))
 def create():
-    import time
-    time_tuple = time.localtime(time.time())
-    time_dict = {"year":time_tuple.tm_year, "month": time_tuple.tm_mon, "mday": time_tuple.tm_mday}
-    return render_template('index/index.html', time_dict = time_dict)
+    curr_city = "深圳"
+    weather_data = getWeather(curr_city)
+    data = {"city": curr_city, "weather": weather_data}
+    return render_template('index/index.html', data = data)
