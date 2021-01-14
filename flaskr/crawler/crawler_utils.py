@@ -16,8 +16,8 @@ def getWeather(city_name:str):
   res = []
   for i in range(len(w['forecast'])):
     curr_weather_data = {}
-    curr_date = re.findall(r"\d+\.?\d*",w['forecast'][i]['date'])[0]
-    curr_weather_data["date"] = curr_date
+    # curr_date = re.findall(r"\d+\.?\d*",w['forecast'][i]['date'])[0]
+    curr_weather_data["date"] = w['forecast'][i]['date']
 
     curr_high_temp = re.findall(r"\d+\.?\d*",w['forecast'][i]['high'])[0]
     curr_weather_data["high_temp"] = curr_high_temp

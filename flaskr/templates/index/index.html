@@ -36,7 +36,7 @@
    {%- for weather_item in data["weather"] %}
     <tr>
       <td>{{weather_item["date"]}}</td>
-      <td>{{weather_item["type"]}}</td>
+      <td><img src="static/pics/weather_forecast/{{weather_item["type"] }}.png" width="80px"/></td>
       <td>{{weather_item["low_temp"]}}</td>
       <td>{{weather_item["high_temp"]}}</td>
     </tr>
