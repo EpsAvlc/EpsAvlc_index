@@ -1,5 +1,22 @@
 import json, requests
 import re
+import geoip2.database
+from flask import url_for
+import os
+
+def getIPAddress():
+  ip = requests.get('https://checkip.amazonaws.com').text.strip()
+  print(ip)
+  return ip
+
+def getCityName(ip:str):
+  curr_path = os.path.split(os.path.realpath(__file__))[0]
+  reader = geoip2.database.Reader(curr_path + "/../static/GeoLite2-City.mmdb")
+  response = reader.city(ip)
+  return response.city.names["zh-CN"][:-1]
+
+def getLocalCityName():
+  return getCityName(getIPAddress())
 
 def getWeather(city_name:str):
   '''
@@ -35,4 +52,4 @@ def getWeather(city_name:str):
   return res
 
 if __name__ == "__main__":
-    getWeather("深圳")
+  print(getLocalCityName())

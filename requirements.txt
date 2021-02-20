@@ -1,0 +1,5 @@
+flask_bootstrap
+bootstrap_flask
+flask_sqlalchemy
+geoip2
+urllib
