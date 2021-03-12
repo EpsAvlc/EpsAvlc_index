@@ -35,9 +35,6 @@ def create_app(test_config=None):
     from .blueprints import fund
     app.register_blueprint(fund.bp)
 
-    from .blueprints import fund_grid
-    app.register_blueprint(fund_grid.bp)
-
     from .blueprints import onmyoji
     app.register_blueprint(onmyoji.bp)
 
