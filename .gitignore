@@ -1,5 +1,6 @@
 .vscode
 */__pycache__/
+flasker/blueprints/__pycache__/
 /instance
 .env
 py37-flask/
