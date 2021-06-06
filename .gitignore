@@ -4,3 +4,4 @@ flasker/blueprints/__pycache__/
 /instance
 .env
 py37-flask/
+nohup.out

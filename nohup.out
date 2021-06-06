@@ -1209,3 +1209,202 @@ requests.exceptions.ConnectionError: HTTPSConnectionPool(host='checkip.amazonaws
 10.249.144.233 - - [18/May/2021 16:39:31] "GET /index?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
 10.249.144.233 - - [18/May/2021 16:39:31] "GET /index?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
 10.249.144.233 - - [18/May/2021 16:39:31] "GET /index?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+10.249.144.233 - - [19/May/2021 08:19:14] "GET /index HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 2309, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 2295, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1741, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3/dist-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3/dist-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/pi/EpsAvlc_index/flaskr/blueprints/index.py", line 11, in create
+    curr_city = getLocalCityName()
+  File "/home/pi/EpsAvlc_index/flaskr/crawler/crawler_utils.py", line 19, in getLocalCityName
+    return getCityName(getIPAddress())
+  File "/home/pi/EpsAvlc_index/flaskr/crawler/crawler_utils.py", line 8, in getIPAddress
+    ip = requests.get('https://checkip.amazonaws.com').text.strip()
+  File "/usr/local/lib/python3.7/dist-packages/requests/api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='checkip.amazonaws.com', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0xb2df55b0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+10.249.144.233 - - [19/May/2021 08:19:14] "GET /index?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+10.249.144.233 - - [19/May/2021 08:19:14] "GET /index?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+10.249.144.233 - - [19/May/2021 08:19:14] "GET /index?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+10.249.144.233 - - [19/May/2021 08:19:15] "GET /index?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+10.249.144.233 - - [19/May/2021 10:45:07] "GET /index HTTP/1.1" 500 -
+10.249.144.233 - - [19/May/2021 14:13:13] "GET /index HTTP/1.1" 200 -
+10.249.144.233 - - [19/May/2021 14:13:14] "GET /static/style.css HTTP/1.1" 200 -
+10.249.144.233 - - [19/May/2021 14:13:14] "GET /static/pics/weather_forecast/%E5%B0%8F%E9%9B%A8.png HTTP/1.1" 200 -
+10.249.144.233 - - [19/May/2021 14:13:14] "GET /static/favicon.ico HTTP/1.1" 200 -
+10.249.144.233 - - [19/May/2021 14:13:14] "GET /static/pics/weather_forecast/%E5%A4%9A%E4%BA%91.png HTTP/1.1" 200 -
+10.249.144.233 - - [19/May/2021 14:13:14] "GET /static/pics/weather_forecast/%E9%9B%B7%E9%98%B5%E9%9B%A8.png HTTP/1.1" 200 -
+10.249.144.233 - - [19/May/2021 14:13:37] "GET /fund HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 2309, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 2295, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1741, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3/dist-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3/dist-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/pi/EpsAvlc_index/flaskr/blueprints/fund.py", line 11, in create
+    fund_list = get_fund_dict()
+  File "/home/pi/EpsAvlc_index/flaskr/crawler/fund_crawler.py", line 15, in get_fund_dict
+    web_data = requests.get(fund_site, headers=headers).json()
+  File "/usr/local/lib/python3.7/dist-packages/requests/api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/requests/sessions.py", line 528, in request
+    prep = self.prepare_request(req)
+  File "/usr/local/lib/python3.7/dist-packages/requests/sessions.py", line 466, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/usr/local/lib/python3.7/dist-packages/requests/models.py", line 317, in prepare
+    self.prepare_headers(headers)
+  File "/usr/local/lib/python3.7/dist-packages/requests/models.py", line 451, in prepare_headers
+    check_header_validity(header)
+  File "/usr/local/lib/python3.7/dist-packages/requests/utils.py", line 960, in check_header_validity
+    "bytes, not %s" % (name, value, type(value)))
+requests.exceptions.InvalidHeader: Value for header {Upgrade-Insecure-Requests: 1} must be of type str or bytes, not <class 'int'>
+10.249.144.233 - - [19/May/2021 14:13:37] "GET /fund?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+10.249.144.233 - - [19/May/2021 14:13:37] "GET /fund?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+10.249.144.233 - - [19/May/2021 14:13:37] "GET /fund?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+10.249.144.233 - - [19/May/2021 14:13:37] "GET /fund?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+10.249.144.233 - - [19/May/2021 14:13:40] "GET /onmyoji HTTP/1.1" 200 -
+10.249.144.233 - - [19/May/2021 14:13:40] "GET /static/style.css HTTP/1.1" 304 -
+10.249.144.233 - - [19/May/2021 14:13:40] "GET /static/pics/onmyoji/xuanshang.png HTTP/1.1" 200 -
+10.249.144.233 - - [19/May/2021 14:13:41] "GET /static/favicon.ico HTTP/1.1" 304 -
+10.249.144.233 - - [19/May/2021 14:13:43] "GET /index HTTP/1.1" 200 -
+10.249.144.233 - - [19/May/2021 14:13:43] "GET /static/style.css HTTP/1.1" 304 -
+10.249.144.233 - - [19/May/2021 14:13:43] "GET /static/pics/weather_forecast/%E5%B0%8F%E9%9B%A8.png HTTP/1.1" 304 -
+10.249.144.233 - - [19/May/2021 14:13:43] "GET /static/favicon.ico HTTP/1.1" 304 -
+10.249.144.233 - - [19/May/2021 14:13:44] "GET /static/pics/weather_forecast/%E5%A4%9A%E4%BA%91.png HTTP/1.1" 304 -
+10.249.144.233 - - [19/May/2021 14:13:44] "GET /static/pics/weather_forecast/%E9%9B%B7%E9%98%B5%E9%9B%A8.png HTTP/1.1" 304 -
+10.249.144.233 - - [19/May/2021 14:16:34] "GET / HTTP/1.1" 302 -
+10.249.144.233 - - [19/May/2021 14:16:36] "GET /index HTTP/1.1" 200 -
+10.249.144.233 - - [19/May/2021 14:16:36] "GET /static/style.css HTTP/1.1" 200 -
+10.249.144.233 - - [19/May/2021 14:16:36] "GET /static/favicon.ico HTTP/1.1" 200 -
+10.249.144.233 - - [19/May/2021 14:16:37] "GET /static/pics/weather_forecast/%E5%B0%8F%E9%9B%A8.png HTTP/1.1" 200 -
+10.249.144.233 - - [19/May/2021 14:16:37] "GET /static/pics/weather_forecast/%E5%A4%9A%E4%BA%91.png HTTP/1.1" 200 -
+10.249.144.233 - - [19/May/2021 14:16:37] "GET /static/pics/weather_forecast/%E9%9B%B7%E9%98%B5%E9%9B%A8.png HTTP/1.1" 200 -
+10.249.144.233 - - [19/May/2021 14:17:56] "GET /index HTTP/1.1" 200 -
+10.249.144.233 - - [19/May/2021 14:17:56] "GET /static/style.css HTTP/1.1" 304 -
+10.249.144.233 - - [19/May/2021 14:17:56] "GET /static/pics/weather_forecast/%E5%B0%8F%E9%9B%A8.png HTTP/1.1" 200 -
+10.249.144.233 - - [19/May/2021 14:17:56] "GET /static/favicon.ico HTTP/1.1" 200 -
+10.249.144.233 - - [19/May/2021 14:17:56] "GET /static/pics/weather_forecast/%E9%9B%B7%E9%98%B5%E9%9B%A8.png HTTP/1.1" 304 -
+10.249.144.233 - - [19/May/2021 14:17:56] "GET /static/pics/weather_forecast/%E5%A4%9A%E4%BA%91.png HTTP/1.1" 304 -
+127.0.0.1 - - [19/May/2021 14:25:13] "GET / HTTP/1.1" 302 -
+127.0.0.1 - - [19/May/2021 14:25:14] "GET /index HTTP/1.1" 200 -
+127.0.0.1 - - [19/May/2021 14:25:15] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [19/May/2021 14:25:15] "GET /static/pics/weather_forecast/%E5%A4%9A%E4%BA%91.png HTTP/1.1" 200 -
+127.0.0.1 - - [19/May/2021 14:25:15] "GET /static/pics/weather_forecast/%E5%B0%8F%E9%9B%A8.png HTTP/1.1" 200 -
+127.0.0.1 - - [19/May/2021 14:25:15] "GET /static/pics/weather_forecast/%E9%9B%B7%E9%98%B5%E9%9B%A8.png HTTP/1.1" 200 -
+127.0.0.1 - - [19/May/2021 14:25:15] "GET /static/favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [19/May/2021 14:25:52] "GET /index HTTP/1.1" 200 -
+127.0.0.1 - - [19/May/2021 14:25:52] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [19/May/2021 14:25:52] "GET /static/pics/weather_forecast/%E5%B0%8F%E9%9B%A8.png HTTP/1.1" 304 -
+127.0.0.1 - - [19/May/2021 14:25:52] "GET /static/favicon.ico HTTP/1.1" 304 -
+127.0.0.1 - - [19/May/2021 14:25:52] "GET /static/pics/weather_forecast/%E5%A4%9A%E4%BA%91.png HTTP/1.1" 304 -
+127.0.0.1 - - [19/May/2021 14:25:52] "GET /static/pics/weather_forecast/%E9%9B%B7%E9%98%B5%E9%9B%A8.png HTTP/1.1" 304 -
+10.249.144.233 - - [19/May/2021 14:26:20] "GET /index HTTP/1.1" 200 -
+10.249.144.233 - - [19/May/2021 14:26:20] "GET /static/style.css HTTP/1.1" 200 -
+10.249.144.233 - - [19/May/2021 14:26:20] "GET /static/pics/weather_forecast/%E9%9B%B7%E9%98%B5%E9%9B%A8.png HTTP/1.1" 304 -
+10.249.144.233 - - [19/May/2021 14:26:20] "GET /static/favicon.ico HTTP/1.1" 304 -
+10.249.144.233 - - [19/May/2021 14:26:21] "GET /static/pics/weather_forecast/%E5%B0%8F%E9%9B%A8.png HTTP/1.1" 200 -
+10.249.144.233 - - [19/May/2021 14:26:21] "GET /static/pics/weather_forecast/%E5%A4%9A%E4%BA%91.png HTTP/1.1" 304 -
+127.0.0.1 - - [19/May/2021 14:29:18] "GET /index HTTP/1.1" 200 -
+127.0.0.1 - - [19/May/2021 14:29:18] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [19/May/2021 14:29:18] "GET /static/pics/weather_forecast/%E5%B0%8F%E9%9B%A8.png HTTP/1.1" 200 -
+127.0.0.1 - - [19/May/2021 14:29:18] "GET /static/pics/weather_forecast/%E5%A4%9A%E4%BA%91.png HTTP/1.1" 304 -
+127.0.0.1 - - [19/May/2021 14:29:18] "GET /static/pics/weather_forecast/%E9%9B%B7%E9%98%B5%E9%9B%A8.png HTTP/1.1" 304 -
+127.0.0.1 - - [19/May/2021 14:29:18] "GET /static/favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [19/May/2021 14:29:53] "GET /index HTTP/1.1" 200 -
+127.0.0.1 - - [19/May/2021 14:29:53] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [19/May/2021 14:29:53] "GET /static/pics/weather_forecast/%E9%9B%B7%E9%98%B5%E9%9B%A8.png HTTP/1.1" 200 -
+127.0.0.1 - - [19/May/2021 14:29:54] "GET /static/pics/weather_forecast/%E5%B0%8F%E9%9B%A8.png HTTP/1.1" 200 -
+127.0.0.1 - - [19/May/2021 14:29:54] "GET /static/pics/weather_forecast/%E5%A4%9A%E4%BA%91.png HTTP/1.1" 200 -
+127.0.0.1 - - [19/May/2021 14:29:54] "GET /static/favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [19/May/2021 14:30:03] "GET /index HTTP/1.1" 200 -
+127.0.0.1 - - [19/May/2021 14:30:34] "GET /index HTTP/1.1" 200 -
+127.0.0.1 - - [19/May/2021 14:30:34] "GET /static/pics/weather_forecast/%E9%9B%B7%E9%98%B5%E9%9B%A8.png HTTP/1.1" 304 -
+127.0.0.1 - - [19/May/2021 14:30:34] "GET /static/pics/weather_forecast/%E5%A4%9A%E4%BA%91.png HTTP/1.1" 304 -
+127.0.0.1 - - [19/May/2021 14:30:35] "GET /static/pics/weather_forecast/%E5%B0%8F%E9%9B%A8.png HTTP/1.1" 304 -
+127.0.0.1 - - [19/May/2021 14:30:35] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [19/May/2021 14:30:35] "GET /static/favicon.ico HTTP/1.1" 304 -
+127.0.0.1 - - [05/Jun/2021 21:07:42] "GET /static/favicon.ico HTTP/1.1" 304 -
+127.0.0.1 - - [05/Jun/2021 21:34:42] "GET /index HTTP/1.1" 200 -
+127.0.0.1 - - [05/Jun/2021 21:34:42] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [05/Jun/2021 21:34:42] "GET /static/pics/weather_forecast/%E5%B0%8F%E9%9B%A8.png HTTP/1.1" 200 -
+127.0.0.1 - - [05/Jun/2021 21:34:42] "GET /static/pics/weather_forecast/%E5%A4%9A%E4%BA%91.png HTTP/1.1" 200 -
+127.0.0.1 - - [05/Jun/2021 21:34:43] "GET /static/pics/weather_forecast/%E9%9B%B7%E9%98%B5%E9%9B%A8.png HTTP/1.1" 200 -
+127.0.0.1 - - [05/Jun/2021 23:16:06] "GET /index HTTP/1.1" 200 -
+127.0.0.1 - - [05/Jun/2021 23:16:06] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [05/Jun/2021 23:16:07] "GET /static/pics/weather_forecast/%E5%B0%8F%E9%9B%A8.png HTTP/1.1" 304 -
+127.0.0.1 - - [05/Jun/2021 23:16:07] "GET /static/pics/weather_forecast/%E9%9B%B7%E9%98%B5%E9%9B%A8.png HTTP/1.1" 304 -
+127.0.0.1 - - [05/Jun/2021 23:16:07] "GET /static/pics/weather_forecast/%E5%A4%9A%E4%BA%91.png HTTP/1.1" 304 -
+127.0.0.1 - - [05/Jun/2021 23:16:07] "GET /static/favicon.ico HTTP/1.1" 304 -
+127.0.0.1 - - [05/Jun/2021 23:16:46] "GET / HTTP/1.1" 302 -
+127.0.0.1 - - [05/Jun/2021 23:16:47] "GET / HTTP/1.1" 302 -
+127.0.0.1 - - [05/Jun/2021 23:16:49] "GET /index HTTP/1.1" 200 -
+127.0.0.1 - - [05/Jun/2021 23:16:50] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [05/Jun/2021 23:16:50] "GET /static/pics/weather_forecast/%E5%B0%8F%E9%9B%A8.png HTTP/1.1" 304 -
+127.0.0.1 - - [05/Jun/2021 23:16:50] "GET /static/pics/weather_forecast/%E5%A4%9A%E4%BA%91.png HTTP/1.1" 304 -
+127.0.0.1 - - [05/Jun/2021 23:16:50] "GET /static/pics/weather_forecast/%E9%9B%B7%E9%98%B5%E9%9B%A8.png HTTP/1.1" 304 -
+127.0.0.1 - - [05/Jun/2021 23:16:50] "GET /static/favicon.ico HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jun/2021 03:50:40] "GET / HTTP/1.1" 302 -
+127.0.0.1 - - [06/Jun/2021 03:50:41] "GET /index HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jun/2021 03:50:55] "GET / HTTP/1.1" 302 -
+127.0.0.1 - - [06/Jun/2021 03:50:57] "GET /index HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jun/2021 09:49:22] "GET /index HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jun/2021 09:49:24] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jun/2021 09:49:24] "GET /static/pics/weather_forecast/%E4%B8%AD%E9%9B%A8.png HTTP/1.1" 404 -
+127.0.0.1 - - [06/Jun/2021 09:49:24] "GET /static/pics/weather_forecast/%E5%B0%8F%E9%9B%A8.png HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jun/2021 09:49:24] "GET /static/pics/weather_forecast/%E5%A4%9A%E4%BA%91.png HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jun/2021 09:49:24] "GET /static/favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jun/2021 09:49:29] "GET /index HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jun/2021 09:49:29] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jun/2021 09:49:30] "GET /static/pics/weather_forecast/%E4%B8%AD%E9%9B%A8.png HTTP/1.1" 404 -
+127.0.0.1 - - [06/Jun/2021 09:49:30] "GET /static/pics/weather_forecast/%E5%A4%9A%E4%BA%91.png HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jun/2021 09:49:30] "GET /static/pics/weather_forecast/%E5%B0%8F%E9%9B%A8.png HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jun/2021 09:49:30] "GET /static/favicon.ico HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jun/2021 09:49:32] "GET /index HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jun/2021 10:08:23] "GET /index HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jun/2021 10:08:23] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jun/2021 10:08:23] "GET /static/pics/weather_forecast/%E5%B0%8F%E9%9B%A8.png HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jun/2021 10:08:23] "GET /static/pics/weather_forecast/%E5%A4%9A%E4%BA%91.png HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jun/2021 10:08:23] "GET /static/pics/weather_forecast/%E4%B8%AD%E9%9B%A8.png HTTP/1.1" 404 -
+127.0.0.1 - - [06/Jun/2021 10:08:23] "GET /static/favicon.ico HTTP/1.1" 200 -
